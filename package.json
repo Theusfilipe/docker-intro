@@ -1,0 +1,36 @@
+{
+  "name": "docker-intro",
+  "version": "1.0.0",
+  "description": "this app is a nodejs demo",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "start": "babel-node ./app.js",
+    "build": "echo Test build completed! No package was uploaded"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Theusfilipe/docker-intro.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "babel",
+    "nodejs",
+    "docker"
+  ],
+  "author": "Matheus Costa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Theusfilipe/docker-intro/issues"
+  },
+  "homepage": "https://github.com/Theusfilipe/docker-intro#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset": "^1.1.7",
+    "babel-preset-env": "^1.7.0",
+    "express": "^4.18.1",
+    "jest": "^28.1.3"
+  }
+}
