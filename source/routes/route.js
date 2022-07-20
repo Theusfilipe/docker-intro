@@ -22,6 +22,7 @@ const routes = (app) => {
     // get list of People
     app.route('/people')
         .get(getPeople)
+    //comment
 }
 // export the route
 export default routes;
