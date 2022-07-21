@@ -91,7 +91,8 @@ jobs:
           with:
             image: ${{ secrets.DOCKERHUB_USERNAME }}/docker-intro:latest
             run: |
-              echo ls
+              docker pull ${{ secrets.DOCKERHUB_USERNAME }}/docker-intro:latest
+              docker run ${{ secrets.DOCKERHUB_USERNAME }}/docker-intro:latest
           
       
         
