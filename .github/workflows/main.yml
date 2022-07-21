@@ -88,9 +88,11 @@ jobs:
             REMOTE_HOST: ${{ secrets.HOST_DNS }}
             REMOTE_USER: ${{ secrets.USERNAME }}
             TARGET: ${{ secrets.TARGET_DIR }}
-          run: |
+          with:
+            image: ${{ secrets.DOCKERHUB_USERNAME }}/docker-intro:latest
+            run: |
             docker rm
-            docker pull steps.docker_build.outputs.digest
+            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/docker-intro:latest
             docker run
       
         
