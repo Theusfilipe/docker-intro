@@ -90,7 +90,7 @@ jobs:
             TARGET: ${{ secrets.TARGET_DIR }}
           run: |
             docker rm
-            docker pull sha256:e88a0ff3e0119c24ac104bd61114591f49c8287e5ac30fe957197ec749c89214
+            docker pull steps.docker_build.outputs.digest
             docker run
       
         
