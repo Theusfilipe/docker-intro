@@ -88,11 +88,19 @@ jobs:
             REMOTE_HOST: ${{ secrets.HOST_DNS }}
             REMOTE_USER: ${{ secrets.USERNAME }}
             TARGET: ${{ secrets.TARGET_DIR }}
+        - name: Run the image in a container
+          uses: addnab/docker-run-action@v3
+          env:
+            SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+            REMOTE_HOST: ${{ secrets.HOST_DNS }}
+            REMOTE_USER: ${{ secrets.USERNAME }}
+            TARGET: ${{ secrets.TARGET_DIR }}
           with:
             image: ${{ secrets.DOCKERHUB_USERNAME }}/docker-intro:latest
             run: |
-              docker pull ${{ secrets.DOCKERHUB_USERNAME }}/docker-intro:latest
-              docker run ${{ secrets.DOCKERHUB_USERNAME }}/docker-intro:latest
+              echo "runing the docker image"
+              echo "Testing the nodejs  app endpoints"
+              echo ${{ steps.docker_build.outputs.digest }}
           
       
         
