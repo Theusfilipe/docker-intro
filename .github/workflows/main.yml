@@ -98,9 +98,9 @@ jobs:
           with:
             image: ${{ secrets.DOCKERHUB_USERNAME }}/docker-intro:latest
             run: |
-              echo "runing the docker image"
-              echo "Testing the nodejs  app endpoints"
-              echo ${{ steps.docker_build.outputs.digest }}
+              docker stop
+              docker pull ${{ secrets.DOCKERHUB_USERNAME }}/docker-intro:latest
+              docker run ${{ secrets.DOCKERHUB_USERNAME }}/docker-intro:latest
           
       
         
