@@ -96,7 +96,7 @@ jobs:
             key: ${{ secrets.EC2_SSH_KEY }}
             port: 22
             script: |
-              docker stop theusfilipe/docker-intro
+              docker kill $(docker ps -q)
               docker pull theusfilipe/docker-intro
               docker run -p 80:3000 theusfilipe/docker-intro
               
