@@ -96,11 +96,11 @@ jobs:
             REMOTE_USER: ${{ secrets.USERNAME }}
             TARGET: ${{ secrets.TARGET_DIR }}
           with:
-            image: ${{ secrets.DOCKERHUB_USERNAME }}/docker-intro:latest
             run: |
-              docker stop
-              docker pull ${{ secrets.DOCKERHUB_USERNAME }}/docker-intro:latest
-              docker run ${{ secrets.DOCKERHUB_USERNAME }}/docker-intro:latest
+              docker stop ${{ secrets.DOCKERHUB_USERNAME }}/docker-intro
+              docker pull ${{ secrets.DOCKERHUB_USERNAME }}/docker-intro
+              docker run -p 80:3000 ${{ secrets.DOCKERHUB_USERNAME }}/docker-intro
+              docker run  theusfilipe/docker-intro
           
       
         
