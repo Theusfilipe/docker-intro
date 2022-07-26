@@ -94,7 +94,7 @@ jobs:
             host: ${{ secrets.HOST_DNS }}
             username: ${{ secrets.USERNAME }}
             key: ${{ secrets.EC2_SSH_KEY }}
-            port: 3000
+            port: 22
             script: |
               whoami
               ls -al
