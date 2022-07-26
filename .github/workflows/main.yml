@@ -96,15 +96,13 @@ jobs:
             key: ${{ secrets.EC2_SSH_KEY }}
             port: 22
             script: |
-              whoami
-              ls -al
-              docker ps
+              docker stop theusfilipe/docker-intro
+              docker pull theusfilipe/docker-intro
+              docker run -p 80:3000 theusfilipe/docker-intro
               
               
               
-          #docker 
-          #docker pull theusfilipe/docker-intro
-          #docker run -p 80:3000 theusfilipe/docker-intro
+          
       
         
   
