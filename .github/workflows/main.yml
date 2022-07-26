@@ -97,10 +97,12 @@ jobs:
             TARGET: ${{ secrets.TARGET_DIR }}
           with:
             run: |
-              docker stop ${{ secrets.DOCKERHUB_USERNAME }}/docker-intro
-              docker pull ${{ secrets.DOCKERHUB_USERNAME }}/docker-intro
-              docker run -p 80:3000 ${{ secrets.DOCKERHUB_USERNAME }}/docker-intro
-              docker run  theusfilipe/docker-intro
+              docker stop theusfilipe/docker-intro
+              |
+              docker pull theusfilipe/docker-intro
+              |
+              docker run -p 80:3000 theusfilipe/docker-intro
+              
           
       
         
